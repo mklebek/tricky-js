@@ -1,0 +1,1 @@
+Presentation of some of the JS quirks created using [reveal.js](https://github.com/hakimel/reveal.js/).
