@@ -45,69 +45,6 @@ converts string to number</pre>
 				<section>
 					<h4>What will the console print out?</h4>
 					<pre>Question:<code data-trim>
-							5 < 6 < 7
-							7 > 6 > 5
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							5 < 6 < 7 // true
-							7 > 6 > 5 // false
-						</code></pre>
-					<pre class="fragment">It evalutes the first condition adn returns a boolean<code data-trim>
-						true < 7
-						true > 7
-					</code></pre>
-					<pre class="fragment">Since the types don't match it converts the boolean to number<code data-trim>
-						1 < 7
-						1 > 7
-					</code></pre>
-				</section>
-				<section style="font-size: 36px;">
-					<p>What will the console print out?</p>
-					<pre>Question:<code data-trim>
-							1337 / 0
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							Infinity
-						</code></pre>
-					<pre class="fragment">Question:<code data-trim>
-							1337 / -0
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							-Infinity
-						</code></pre>
-					<pre class="fragment">Question:<code data-trim>
-							Infinity / -Infinity
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							NaN
-						</code></pre>
-					<pre class="fragment">Question:<code data-trim>
-							typeof NaN
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							"number"
-						</code></pre>
-				</section>
-				<section>
-					<p>What will the console print out?</p>
-					<pre>Question:<code data-trim>
-							Math.max()
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							-Infinity
-						</code></pre>
-					<pre class="fragment">Math max takes the lowest known value and compares it to first argument
-passed and picks the max out of those values. Then it compares the
-values one by one and swaps the current maximum value<code data-trim>
-							Math.max(1,2,3)
-						</code></pre>
-					<pre class="fragment"><code data-trim>
-							3
-						</code></pre>
-				</section>
-				<section>
-					<h4>What will the console print out?</h4>
-					<pre>Question:<code data-trim>
 							[] + []
 						</code></pre>
 					<pre class="fragment">Result:<code data-trim>
@@ -170,8 +107,71 @@ We already know array coerces to empty string<code data-trim>
 					<pre><code data-trim>
 							"1,2,34,5,6"
 						</code></pre>
-					<p>"+" operates on strings (concatenate) or numbers (addition). Since array is not on any of those types it first tries to convert it first.</p>
+						<p>"+" operates on strings (concatenate) or numbers (addition). Since array is not on any of those types it first tries to convert it first.</p>
 					</div>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre>Question:<code data-trim>
+							5 < 6 < 7
+							7 > 6 > 5
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							5 < 6 < 7 // true
+							7 > 6 > 5 // false
+						</code></pre>
+					<pre class="fragment">It evalutes the first condition adn returns a boolean<code data-trim>
+						true < 7
+						true > 7
+					</code></pre>
+					<pre class="fragment">Since the types don't match it converts the boolean to number<code data-trim>
+						1 < 7
+						1 > 7
+					</code></pre>
+				</section>
+				<section style="font-size: 36px;">
+					<p>What will the console print out?</p>
+					<pre>Question:<code data-trim>
+							1337 / 0
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							Infinity
+						</code></pre>
+					<pre class="fragment">Question:<code data-trim>
+							1337 / -0
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							-Infinity
+						</code></pre>
+					<pre class="fragment">Question:<code data-trim>
+							Infinity / -Infinity
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							NaN
+						</code></pre>
+					<pre class="fragment">Question:<code data-trim>
+							typeof NaN
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							"number"
+						</code></pre>
+				</section>
+				<section>
+					<p>What will the console print out?</p>
+					<pre>Question:<code data-trim>
+							Math.max()
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							-Infinity
+						</code></pre>
+					<pre class="fragment">Math max takes the lowest known value and compares it to first argument
+passed and picks the max out of those values. Then it compares the
+values one by one and swaps the current maximum value<code data-trim>
+							Math.max(1,2,3)
+						</code></pre>
+					<pre class="fragment"><code data-trim>
+							3
+						</code></pre>
 				</section>
 				<section>
 					<h4>What will the console print out?</h4>
