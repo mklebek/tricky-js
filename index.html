@@ -27,6 +27,62 @@
 			<div class="slides">
 				<section>
 					<h4>What will the console print out?</h4>
+					<pre>Question:<code data-trim>
+							[] + []
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							""
+						</code></pre>
+					<pre class="fragment">First it calls the abstract ToPrimitive method which in this case results
+in stringifying the arrays<code data-trim>
+						String([]) + String([])
+					</code></pre>
+					<pre class="fragment"><code data-trim>
+						"" + ""
+					</code></pre>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre>Question:<code data-trim>
+							{} + []
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							0
+						</code></pre>
+					<pre class="fragment">The engine treats the {} as an empty block which leaves us with<code data-trim>
+						+[]
+					</code></pre>
+					<pre class="fragment">+[] is essentialy a shorter way of writing<code data-trim>
+						Number([])
+					</code></pre>
+					<pre class="fragment">Since array is a non primitive type it needs to be converted to primitive first<code data-trim>
+						Number("")
+					</code></pre>
+					<pre class="fragment">And everyone knows that empty string converts to 0 :D<code data-trim>
+						0
+					</code></pre>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre>Question:<code data-trim>
+							[] + {}
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							"[object Object]"
+						</code></pre>
+					<pre class="fragment">So in this scenario we are "adding" an array and an object.
+We already know array coerces to empty string<code data-trim>
+						"" + String({})
+					</code></pre>
+					<pre class="fragment">Stringified object results in "[object Object]"<code data-trim>
+						"" + "[object Object]"
+					</code></pre>
+					<pre class="fragment">When we concate those two strings we finally end up with<code data-trim>
+						"[object Object]"
+					</code></pre>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
 					<pre><code data-trim>
 							let testArray = [1, 2, 3] + [4, 5, 6];
 						</code></pre>
@@ -34,7 +90,7 @@
 					<pre><code data-trim>
 							"1,2,34,5,6"
 						</code></pre>
-					<p>"+" operates on strings (concatenate) or numbers (addition). Since array is not on any of those types it first tries to convert it to one of those types which in case of arrays is string.</p>
+					<p>"+" operates on strings (concatenate) or numbers (addition). Since array is not on any of those types it first tries to convert it first.</p>
 					</div>
 				</section>
 				<section>
