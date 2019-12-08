@@ -28,6 +28,18 @@
 				<section>
 					<h4>What will the console print out?</h4>
 					<pre><code data-trim>
+							let testArray = [1, 2, 3] + [4, 5, 6];
+						</code></pre>
+					<div class="fragment">
+					<pre><code data-trim>
+							"1,2,34,5,6"
+						</code></pre>
+					<p>"+" operates on strings (concatenate) or numbers (addition). Since array is not on any of those types it first tries to convert it to one of those types which in case of arrays is string.</p>
+					</div>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre><code data-trim>
 							[] == ![]
 						</code></pre>
 					<pre class="fragment"><code data-trim>
