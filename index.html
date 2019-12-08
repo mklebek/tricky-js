@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Tricky JS</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -25,8 +25,30 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre><code data-trim>
+							[] == ![]
+						</code></pre>
+					<pre class="fragment"><code data-trim>
+							[] == ![] // true
+						</code></pre>
+				</section>
+				<section>
+					<h4>But why?</h4>
+					<pre>First it does the negation, array is not on falsy list<code data-trim>
+							[] == false
+						</code></pre>
+					<pre class="fragment">Coercion prefers numeric comparisons<code data-trim>
+							[] == 0
+						</code></pre>
+					<pre class="fragment">Need to call ToPrimitive on non primitive type<code data-trim>
+							"" == 0
+						</code></pre>
+					<pre class="fragment">Finally it needs to make sure types do match<code data-trim>
+							0 == 0
+						</code></pre>
+				</section>
 			</div>
 		</div>
 
