@@ -45,6 +45,25 @@ converts string to number</pre>
 				<section>
 					<h4>What will the console print out?</h4>
 					<pre>Question:<code data-trim>
+							5 < 6 < 7
+							7 > 6 > 5
+						</code></pre>
+					<pre class="fragment">Result:<code data-trim>
+							5 < 6 < 7 // true
+							7 > 6 > 5 // false
+						</code></pre>
+					<pre class="fragment">It evalutes the first condition adn returns a boolean<code data-trim>
+						true < 7
+						true > 7
+					</code></pre>
+					<pre class="fragment">Since the types don't match it converts the boolean to number<code data-trim>
+						1 < 7
+						1 > 7
+					</code></pre>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre>Question:<code data-trim>
 							[] + []
 						</code></pre>
 					<pre class="fragment">Result:<code data-trim>
