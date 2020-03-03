@@ -28,175 +28,133 @@
 			<div class="slides">
 				<section>
 					<h4>What will the console print out?</h4>
-					<pre>Question:<code data-trim>
-							2 + "2"
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							"22"
-						</code></pre>
-					<pre class="fragment">Question:<code data-trim>
-						2 - "2"
-					</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-						0
-					</code>"+" can operate either on string or number and it prefers string if one of the
-operands is already a string but "-" only operates on numbers thats why it
-converts string to number</pre>
-				</section>
-				<section>
-					<h4>What will the console print out?</h4>
-					<pre>Question:<code data-trim>
-							[] + []
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							""
-						</code></pre>
-					<pre class="fragment">First it calls the abstract ToPrimitive method which in this case results
-in stringifying the arrays<code data-trim>
-						String([]) + String([])
-					</code></pre>
-					<pre class="fragment"><code data-trim>
-						"" + ""
-					</code></pre>
-				</section>
-				<section>
-					<h4>What will the console print out?</h4>
-					<pre>Question:<code data-trim>
-							{} + []
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							0
-						</code></pre>
-					<pre class="fragment">The engine treats the {} as an empty block which leaves us with<code data-trim>
-						+[]
-					</code></pre>
-					<pre class="fragment">+[] is essentialy a shorter way of writing<code data-trim>
-						Number([])
-					</code></pre>
-					<pre class="fragment">Since array is a non primitive type it needs to be converted to primitive first<code data-trim>
-						Number("")
-					</code></pre>
-					<pre class="fragment">And everyone knows that empty string converts to 0 :D<code data-trim>
-						0
-					</code></pre>
-				</section>
-				<section>
-					<h4>What will the console print out?</h4>
-					<pre>Question:<code data-trim>
-							[] + {}
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							"[object Object]"
-						</code></pre>
-					<pre class="fragment">So in this scenario we are "adding" an array and an object.
-We already know array coerces to empty string<code data-trim>
-						"" + String({})
-					</code></pre>
-					<pre class="fragment">Stringified object results in "[object Object]"<code data-trim>
-						"" + "[object Object]"
-					</code></pre>
-					<pre class="fragment">When we concate those two strings we finally end up with<code data-trim>
-						"[object Object]"
-					</code></pre>
-				</section>
-				<section>
-					<h4>What will the console print out?</h4>
-					<pre><code data-trim>
-							let testArray = [1, 2, 3] + [4, 5, 6];
-						</code></pre>
+					<pre>Question:<code data-trim>2 + "2"</code></pre>
+					<pre class="fragment">Result:<code data-trim>"22"</code></pre>
+					<pre class="fragment">Question:<code data-trim>2 - "2"</code></pre>
 					<div class="fragment">
-					<pre><code data-trim>
-							"1,2,34,5,6"
-						</code></pre>
+						<pre>Result:<code data-trim>0</code></pre>
+						<p>
+							"+" can operate either on string or number and it prefers string if one of the
+							operands is already a string but "-" only operates on numbers thats why it
+							converts string to number
+						</p>
+					</div>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre>Question:<code data-trim>[] + []</code></pre>
+					<pre class="fragment">Result:<code data-trim>""</code></pre>
+					<div class="fragment">
+						<p>First it calls the abstract ToPrimitive method which in this case results in stringifying the arrays</p>
+						<pre><code data-trim>String([]) + String([])</code></pre>
+						<pre class="fragment"><code data-trim>"" + ""</code></pre>
+					</div>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre>Question:<code data-trim>{} + []</code></pre>
+					<pre class="fragment">Result:<code data-trim>0</code></pre>
+					<div class="fragment">
+						<p>The engine treats the {} as an empty block which leaves us with</p>
+						<pre><code data-trim>+[]</code></pre>
+					</div>
+					<div class="fragment">
+						<p>+[] is essentialy a shorter way of writing</p>
+						<pre><code data-trim>Number([])</code></pre>
+					</div>
+					<div class="fragment">
+						<p>Since array is a non primitive type it needs to be converted to primitive first</p>
+						<pre><code data-trim>Number("")</code></pre>
+					</div>
+					<div class="fragment">
+						<p>And everyone knows that empty string converts to 0 :D</p>
+						<pre><code data-trim>0</code></pre>
+					</div>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre>Question:<code data-trim>[] + {}</code></pre>
+					<pre class="fragment">Result:<code data-trim>"[object Object]"</code></pre>
+					<div class="fragment">
+						<p>So in this scenario we are "adding" an array and an object. We already know array coerces to empty string</p>
+						<pre><code data-trim>"" + String({})</code></pre>
+					</div>
+					<div class="fragment">
+						<p>Stringified object results in "[object Object]"</p>
+						<pre><code data-trim>"" + "[object Object]"</code></pre>
+					</div>
+					<div class="fragment">
+						<p>When we concatenate those two strings we finally end up with</p>
+						<pre><code data-trim>"[object Object]"</code></pre>
+					</div>
+				</section>
+				<section>
+					<h4>What will the console print out?</h4>
+					<pre><code data-trim>let testArray = [1, 2, 3] + [4, 5, 6];</code></pre>
+					<div class="fragment">
+						<pre><code data-trim>"1,2,34,5,6"</code></pre>
 						<p>"+" operates on strings (concatenate) or numbers (addition). Since array is not on any of those types it first tries to convert it first.</p>
 					</div>
 				</section>
 				<section>
 					<h4>What will the console print out?</h4>
-					<pre>Question:<code data-trim>
-							5 < 6 < 7
-							7 > 6 > 5
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							5 < 6 < 7 // true
-							7 > 6 > 5 // false
-						</code></pre>
-					<pre class="fragment">It evalutes the first condition adn returns a boolean<code data-trim>
-						true < 7
-						true > 7
-					</code></pre>
-					<pre class="fragment">Since the types don't match it converts the boolean to number<code data-trim>
-						1 < 7
-						1 > 7
-					</code></pre>
+					<pre>Question:<code data-trim>5 < 6 < 7</code><code data-trim>7 > 6 > 5</code></pre>
+					<div class="fragment">
+						<pre>Result:<code data-trim>5 < 6 < 7 // true</code><code data-trim>7 > 6 > 5 // false</code></pre>
+					</div>
+					<div class="fragment">
+						<p>It evalutes the first condition and returns a boolean</p>
+						<pre><code data-trim>true < 7</code><code data-trim>true > 7</code></pre>
+					</div>
+					<div class="fragment">
+						<p>Since the types don't match it converts the boolean to number</p>
+						<pre><code data-trim>1 < 7</code><code data-trim>1 > 7</code></pre>
+					</div>
 				</section>
 				<section style="font-size: 36px;">
 					<p>What will the console print out?</p>
-					<pre>Question:<code data-trim>
-							1337 / 0
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							Infinity
-						</code></pre>
-					<pre class="fragment">Question:<code data-trim>
-							1337 / -0
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							-Infinity
-						</code></pre>
-					<pre class="fragment">Question:<code data-trim>
-							Infinity / -Infinity
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							NaN
-						</code></pre>
-					<pre class="fragment">Question:<code data-trim>
-							typeof NaN
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							"number"
-						</code></pre>
+					<pre>Question:<code data-trim>1337 / 0</code></pre>
+					<pre class="fragment">Result:<code data-trim>Infinity</code></pre>
+					<pre class="fragment">Question:<code data-trim>1337 / -0</code></pre>
+					<pre class="fragment">Result:<code data-trim>-Infinity</code></pre>
+					<pre class="fragment">Question:<code data-trim>Infinity / -Infinity</code></pre>
+					<pre class="fragment">Result:<code data-trim>NaN</code></pre>
+					<pre class="fragment">Question:<code data-trim>typeof NaN</code></pre>
+					<pre class="fragment">Result:<code data-trim>"number"</code></pre>
 				</section>
 				<section>
 					<p>What will the console print out?</p>
-					<pre>Question:<code data-trim>
-							Math.max()
-						</code></pre>
-					<pre class="fragment">Result:<code data-trim>
-							-Infinity
-						</code></pre>
-					<pre class="fragment">Math max takes the lowest known value and compares it to first argument
-passed and picks the max out of those values. Then it compares the
-values one by one and swaps the current maximum value<code data-trim>
-							Math.max(1,2,3)
-						</code></pre>
-					<pre class="fragment"><code data-trim>
-							3
-						</code></pre>
+					<pre>Question:<code data-trim>Math.max()</code></pre>
+					<pre class="fragment">Result:<code data-trim>-Infinity</code></pre>
+					<div class="fragment">
+						<p>Math max takes the lowest known value and compares it to first argument passed and picks the max out of those values. Then it compares the values one by one and swaps the current maximum value</p>
+						<pre><code data-trim>Math.max(1,2,3)</code></pre>
+					</div>
+					<pre class="fragment"><code data-trim>3</code></pre>
 				</section>
 				<section>
 					<h4>What will the console print out?</h4>
-					<pre><code data-trim>
-							[] == ![]
-						</code></pre>
-					<pre class="fragment"><code data-trim>
-							[] == ![] // true
-						</code></pre>
+					<pre><code data-trim>[] == ![]</code></pre>
+					<pre class="fragment"><code data-trim>[] == ![] // true</code></pre>
 				</section>
 				<section>
 					<h4>But why?</h4>
-					<pre>First it does the negation, array is not on falsy list<code data-trim>
-							[] == false
-						</code></pre>
-					<pre class="fragment">Coercion prefers numeric comparisons<code data-trim>
-							[] == 0
-						</code></pre>
-					<pre class="fragment">Need to call ToPrimitive on non primitive type<code data-trim>
-							"" == 0
-						</code></pre>
-					<pre class="fragment">Finally it needs to make sure types do match<code data-trim>
-							0 == 0
-						</code></pre>
+					<div>
+						<p>First it does the negation, array is not on falsy list</p>
+						<pre><code data-trim>[] == false</code></pre>
+					</div>
+					<div class="fragment">
+						<p>Coercion prefers numeric comparisons</p>
+						<pre><code data-trim>[] == 0</code></pre>
+					</div>
+					<div class="fragment">
+						<p>Need to call ToPrimitive on non primitive type</p>
+						<pre><code data-trim>"" == 0</code></pre>
+					</div>
+					<div class="fragment">
+						<p>Finally it needs to make sure types do match</p>
+						<pre><code data-trim>0 == 0</code></pre>
+					</div>
 				</section>
 			</div>
 		</div>
